@@ -23,7 +23,7 @@ export const portfolioData = {
     description:
       "Hi! I’m Lalit, a Student in NIT Patna. I have a passion for building web applications and love Reading articles and books. My approach combines technical expertise with creative problem-solving to deliver exceptional results.",
     image:
-      "https://res.cloudinary.com/dsmyka9cr/image/upload/v1770302058/My%20Brand/p_photho_zbnwwh.jpg",
+      "https://res.cloudinary.com/dsmyka9cr/image/upload/v1778235248/WhatsApp_Image_2026-05-08_at_15.43.16_hkrbuz.jpg",
     resumeLink:
       "https://res.cloudinary.com/dsmyka9cr/image/upload/v1773147070/NIT_Patna_Resume_Template_v2_1-1_rgveom.pdf",
   },
