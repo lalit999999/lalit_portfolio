@@ -1,5 +1,4 @@
 import { Skills } from "../components/portfolio/Skills";
-import { Section } from "../components/ui/Section";
 
 export function SkillsPage() {
   return (

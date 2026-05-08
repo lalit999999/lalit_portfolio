@@ -1,20 +1,22 @@
 import { Section } from "../ui/Section";
 import { Card } from "../ui/Card";
-import { Hash, ExternalLink, Calendar } from "lucide-react";
+import { Hash, ExternalLink, Calendar, Loader } from "lucide-react";
 import React from "react";
+import { useMultiBlogPosts } from "../../../hooks/useMultiBlogPosts";
 
 type BlogPost = {
-  id: number;
+  id: string | number;
   title: string;
   excerpt: string;
   date: string;
-  readTime: string;
-  category: string;
+  readTime?: string;
+  category?: string;
   url: string;
+  coverImage?: string;
 };
 
-// Sample blog posts - these can be fetched from an API later
-const blogPosts: BlogPost[] = [
+// Fallback sample blog posts in case API fails
+const fallbackBlogPosts: BlogPost[] = [
   {
     id: 1,
     title: "Building Scalable Web Applications with MERN",
@@ -77,20 +79,12 @@ const blogPosts: BlogPost[] = [
   },
 ];
 
-const categoryColors: Record<string, string> = {
-  Backend: "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400",
-  Frontend:
-    "bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400",
-  "API Design":
-    "bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400",
-  Database:
-    "bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400",
-  Security: "bg-rose-50 dark:bg-rose-900/20 text-rose-600 dark:text-rose-400",
-  DevTools:
-    "bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400",
-};
-
 export function Blogs() {
+  const { posts, loading, error, totalBlogs } = useMultiBlogPosts();
+
+  // Use fetched posts or fallback to sample data if API fails
+  const displayPosts = posts.length > 0 ? posts : fallbackBlogPosts;
+
   return (
     <Section className="container mx-auto max-w-5xl scroll-mt-32 px-6 md:px-12">
       <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-zinc-900 dark:text-zinc-100 flex items-center justify-center gap-3">
@@ -102,8 +96,37 @@ export function Blogs() {
         software engineering.
       </p>
 
+      {/* {totalBlogs > 0 && (
+        <div className="mb-8 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg text-center">
+          <p className="text-sm text-blue-800 dark:text-blue-200">
+            <span className="font-semibold">Fetching from:</span> {totalBlogs}{" "}
+            blog {totalBlogs === 1 ? "source" : "sources"}
+          </p>
+        </div>
+      )} */}
+
+      {loading && (
+        <div className="flex justify-center items-center py-12">
+          <div className="flex flex-col items-center gap-3">
+            <Loader className="w-8 h-8 text-pink-500 animate-spin" />
+            <p className="text-zinc-600 dark:text-zinc-400">
+              Loading blog posts...
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* {error && (
+        <div className="mb-8 p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+          <p className="text-amber-800 dark:text-amber-200">
+            <span className="font-semibold">Note:</span> Could not fetch live
+            blog posts from Hashnode ({error}). Showing sample posts instead.
+          </p>
+        </div>
+      )} */}
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {blogPosts.map((post, index) => (
+        {displayPosts.map((post, index) => (
           <a
             key={post.id}
             href={post.url}
@@ -115,31 +138,28 @@ export function Blogs() {
               delay={index * 0.05}
               className="group h-full flex flex-col justify-between hover:border-pink-200 dark:hover:border-pink-800/50"
             >
-              <div>
-                <div className="flex items-center justify-between gap-3 mb-3">
-                  <span
-                    className={`px-3 py-1 text-xs font-medium rounded-full whitespace-nowrap ${
-                      categoryColors[post.category] || categoryColors["Backend"]
-                    }`}
-                  >
-                    {post.category}
-                  </span>
-                  <span className="text-xs text-zinc-500 dark:text-zinc-400">
-                    {post.readTime}
-                  </span>
+              {post.coverImage && (
+                <div className="mb-3 h-40 bg-gradient-to-br from-pink-200 to-purple-200 dark:from-pink-900/30 dark:to-purple-900/30 rounded-lg overflow-hidden">
+                  <img
+                    src={post.coverImage}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
+              )}
 
-                <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-3 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors line-clamp-2">
+              <div>
+                <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors line-clamp-2">
                   {post.title}
                 </h3>
 
-                <p className="text-zinc-600 dark:text-zinc-400 mb-4 line-clamp-3">
+                <p className="text-zinc-600 dark:text-zinc-400 mb-4 line-clamp-3 text-sm">
                   {post.excerpt}
                 </p>
               </div>
 
               <div className="flex items-center justify-between pt-4 border-t border-zinc-100 dark:border-zinc-800">
-                <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
+                <div className="flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
                   <Calendar className="w-4 h-4" />
                   <span>{post.date}</span>
                 </div>

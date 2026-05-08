@@ -12,6 +12,7 @@ import {
   FileCode2,
   Hash,
   Wifi,
+  Container,
 } from "lucide-react";
 
 export const portfolioData = {
@@ -41,30 +42,14 @@ export const portfolioData = {
       year: "2023",
     },
   ],
-  // languages
-  // Java
-  // Python
-  // C++
-  // C
-  // JavaScript
-  // Frontend
-  // React
-  // Html5
-  // CSS
-  // Backend
-  // Node.js
-  // Python
-  // Database
-  // Oracle
-  // MySQL
-  // MongoDB
   skills: [
     {
       category: "Frontend",
       items: [
-        { name: "React", icon: Code2 },
         { name: "HTML5", icon: Layout },
         { name: "Tailwind CSS", icon: Layout },
+        { name: "React", icon: Code2 },
+        { name: "NEXTJS", icon: Layout },
         { name: "Vite", icon: Code2 },
       ],
     },
@@ -72,7 +57,6 @@ export const portfolioData = {
       category: "language",
       items: [
         { name: "C++", icon: Code2 },
-        { name: "Java", icon: Layout },
         { name: "Python", icon: Layout },
         { name: "JavaScript", icon: FileCode2 },
         { name: "C", icon: FileCode2 },
@@ -101,6 +85,7 @@ export const portfolioData = {
       items: [
         { name: "Git/Github", icon: Terminal },
         { name: "VScode", icon: Terminal },
+        { name: "Docker", icon: Container },
         // { name: "Docker", icon: Cpu },
       ],
     },
@@ -129,7 +114,7 @@ export const portfolioData = {
       live: "https://github.com/lalit999999/miniyoutube_backend",
     },
     {
-      id: 2,
+      id: 4,
       title: "EduShare (Frontend Project)",
       description:
         "Developed a responsive front-end web application for an educational platform aimed at supporting the student community. The project was built using React for creating dynamic user interfaces and Vite as the fast build tool for optimized development and performance.",
@@ -138,7 +123,7 @@ export const portfolioData = {
       live: "https://edushare.mewithblender.shop/",
     },
     {
-      id: 2,
+      id: 3,
       title: "Local Service Booking Platform (Full stack application)",
       description:
         "Built a MERN-based service marketplace platform with RESTful APIs for services, bookings, categories,and reviews.Implemented JWT authentication and role-based authorization for Customer, Provider, and Admin access ,Designed a booking lifecycle system (Requested → Confirmed → In-progress → Completed → Cancelled).Structured MongoDB schemas using Mongoose for scalable data management and CRUD operations.Integrated image uploads using Multer and Cloudinary for profile and service-related images.",
@@ -158,6 +143,49 @@ export const portfolioData = {
       github: "https://github.com/lalit999999/service_provider_frontend",
       live: "https://l-s-p.lalitgurjar.in/",
     },
+    {
+      id: 1,
+      title: "Real-time Rider Location Tracking Application",
+      description:
+        "A real-time application for tracking rider locations using WebSocket technology. The application allows users to view the live location of riders on a map, providing an interactive and dynamic experience.",
+      tech: [
+        "HTML5",
+        "CSS3",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Socket.io",
+        "Redis Pub/Sub",
+        "Passport.js",
+        "Google Oauth 2.0",
+        "CORS",
+        "Dotenv",
+      ],
+      github:
+        "https://github.com/lalit999999/realtime-rider-location-tracting-application",
+      live: "https://realtime-rider-location-tracting.onrender.com",
+    },
+    {
+      id: 2,
+      title: "Nebula CheckGrid (Real-time Application)",
+      description:
+        "Nebula CheckGrid is inspired by the 1 Million Checkboxes idea, but built as a practical full-stack real-time app for learning and evaluation.",
+      tech: [
+        "HTML5",
+        "CSS3",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Socket.io",
+        "Redis Pub/Sub",
+        "Passport.js",
+        "Google Oauth 2.0",
+        "CORS",
+        "Dotenv",
+      ],
+      github: "https://github.com/lalit999999/1M-Check_box",
+      live: "https://onem-check-box.onrender.com/",
+    },
   ],
   certifications: [
     {
@@ -172,17 +200,24 @@ export const portfolioData = {
       skills: ["Basic ML", "AI"],
       color: "emerald",
     },
-    // {
-    //   id: 2,
-    //   title: "Full Stack Web Development",
-    //   issuer: "Udemy",
-    //   date: "Feb 2025",
-    //   credentialUrl: "#",
-    //   image:
-    //     "https://res.cloudinary.com/dsmyka9cr/image/upload/v1/certs/fullstack-cert.jpg",
-    //   skills: ["React", "Node.js", "MongoDB", "Express.js"],
-    //   color: "blue",
-    // },
+    {
+      id: 2,
+      title: "AWS Cloud Quest: Cloud Practitioner - Training Badge",
+      issuer: "Amazon Web Services Training and Certification",
+      date: "April 2026",
+      credentialUrl:
+        "https://www.credly.com/badges/d30fe051-d896-46e7-bd43-3f0077d0fc43/public_url",
+      image:
+        "https://res.cloudinary.com/dsmyka9cr/image/upload/q_auto/f_auto/v1775403413/aws_labs_cir2_lwhqyd.jpg",
+      skills: [
+        "Amazon Web Services (AWS)",
+        "AWS",
+        "AWS Cloud",
+        "AWS Cloud Computing",
+        "AWS Cloud Foundations",
+      ],
+      color: "blue",
+    },
     // {
     //   id: 3,
     //   title: "SQL and Databases",

@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Section } from "../ui/Section";
 import { portfolioData } from "../../data/portfolio-data";
 
