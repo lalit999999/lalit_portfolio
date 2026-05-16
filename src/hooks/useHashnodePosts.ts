@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export type BlogPost = {
   id: string;
@@ -19,9 +19,7 @@ export const useHashnodePosts = () => {
     const fetchBlogData = async () => {
       try {
         setLoading(true);
-        const HASHNODE_TOKEN =
-          import.meta.env.VITE_HASHNODE_TOKEN ||
-          "af7aa855-d320-4333-8589-7b4515ce781b";
+        const HASHNODE_TOKEN = import.meta.env.VITE_HASHNODE_TOKEN || "";
         const BLOG_HOST =
           import.meta.env.VITE_BLOG_HOST || "javascriptcontent.hashnode.dev";
 
@@ -57,11 +55,13 @@ export const useHashnodePosts = () => {
         let endCursor: string | null = null;
 
         while (hasNextPage) {
-          const response: Response = await fetch("https://gql.hashnode.com", {
+          const response: Response = await fetch("/api/hashnode", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              Authorization: HASHNODE_TOKEN,
+              ...(HASHNODE_TOKEN && {
+                Authorization: `Bearer ${HASHNODE_TOKEN}`,
+              }),
             },
             body: JSON.stringify({
               query: query,
@@ -102,7 +102,6 @@ export const useHashnodePosts = () => {
           }
         }
 
-        // Transform API response to match BlogPost type
         const transformedPosts: BlogPost[] = allPosts.map((edge: any) => ({
           id: edge.node.id,
           title: edge.node.title,

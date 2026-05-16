@@ -25,7 +25,7 @@ export const portfolioData = {
     image:
       "https://res.cloudinary.com/dsmyka9cr/image/upload/v1778235248/WhatsApp_Image_2026-05-08_at_15.43.16_hkrbuz.jpg",
     resumeLink:
-      "https://res.cloudinary.com/dsmyka9cr/image/upload/v1773147070/NIT_Patna_Resume_Template_v2_1-1_rgveom.pdf",
+      "https://res.cloudinary.com/dsmyka9cr/image/upload/v1778943898/NIT_Patna_Resume_Template_v2_1-1_rgveom.pdf",
   },
   education: [
     {
@@ -97,31 +97,47 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      title: "MiniYouTube Backend",
+      title: "PollMan – Full-Stack Real-Time Poll & Survey Platform",
       description:
-        "Developed a RESTful backend system for a Mini YouTube–like video sharing platform to manage users,videos, and authentication",
+        "A modern full-stack real-time poll and survey platform with live analytics, public sharing, poll publishing, and interactive dashboards built using React, Node.js, MongoDB, Socket.IO, and Recharts",
+
       tech: [
+        "React",
+        "Typescript",
+        "Express.js",
+        "Node JS",
+        "Socket.IO",
+
+        "Oauth 2.0",
+        "Recharts",
+      ],
+      github: "https://github.com/lalit999999/PollMan",
+      live: "https://pollman.onrender.com/",
+    },
+
+    {
+      id: 2,
+      title: "Real-time Rider Location Tracking Application",
+      description:
+        "A real-time application for tracking rider locations using WebSocket technology. The application allows users to view the live location of riders on a map, providing an interactive and dynamic experience.",
+      tech: [
+        "HTML5",
+        "CSS3",
         "Node.js",
         "Express.js",
         "MongoDB",
-        "JWT",
-        "bcrypt",
-        "Multer",
-        "Cloudinary",
+        "Socket.io",
+        "Redis Pub/Sub",
+        "Passport.js",
+        "Google Oauth 2.0",
+        "CORS",
+        "Dotenv",
       ],
-      //
-      github: "https://github.com/lalit999999/miniyoutube_backend",
-      live: "https://github.com/lalit999999/miniyoutube_backend",
+      github:
+        "https://github.com/lalit999999/realtime-rider-location-tracting-application",
+      live: "https://realtime-rider-location-tracting.onrender.com",
     },
-    {
-      id: 4,
-      title: "EduShare (Frontend Project)",
-      description:
-        "Developed a responsive front-end web application for an educational platform aimed at supporting the student community. The project was built using React for creating dynamic user interfaces and Vite as the fast build tool for optimized development and performance.",
-      tech: ["React", "Vite", "JavaScript", "HTML5", "CSS3", "ESLint"],
-      github: "https://github.com/lalit999999/Edushare-",
-      live: "https://edushare.mewithblender.shop/",
-    },
+
     {
       id: 3,
       title: "Local Service Booking Platform (Full stack application)",
@@ -143,30 +159,9 @@ export const portfolioData = {
       github: "https://github.com/lalit999999/service_provider_frontend",
       live: "https://l-s-p.lalitgurjar.in/",
     },
+
     {
-      id: 1,
-      title: "Real-time Rider Location Tracking Application",
-      description:
-        "A real-time application for tracking rider locations using WebSocket technology. The application allows users to view the live location of riders on a map, providing an interactive and dynamic experience.",
-      tech: [
-        "HTML5",
-        "CSS3",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Socket.io",
-        "Redis Pub/Sub",
-        "Passport.js",
-        "Google Oauth 2.0",
-        "CORS",
-        "Dotenv",
-      ],
-      github:
-        "https://github.com/lalit999999/realtime-rider-location-tracting-application",
-      live: "https://realtime-rider-location-tracting.onrender.com",
-    },
-    {
-      id: 2,
+      id: 4,
       title: "Nebula CheckGrid (Real-time Application)",
       description:
         "Nebula CheckGrid is inspired by the 1 Million Checkboxes idea, but built as a practical full-stack real-time app for learning and evaluation.",
@@ -185,6 +180,33 @@ export const portfolioData = {
       ],
       github: "https://github.com/lalit999999/1M-Check_box",
       live: "https://onem-check-box.onrender.com/",
+    },
+    {
+      id: 5,
+      title: "WDC Induction Platform",
+      description:
+        "The WDC Induction Platform is a secure, full-stack web application designed to digitize and automate the student recruitment and onboarding process for the university club. It eliminates manual paperwork by providing a centralized dashboard for both administrators and applicants, streamlining workflows from initial registration to final evaluation",
+
+      tech: ["Node.js", "Express.js", "MongoDB", "JWT"],
+      github: "https://github.com/lalit999999/wdc_redesign_frontend",
+      live: "https://wdc.lalitgurjar.in/",
+    },
+    {
+      id: 6,
+      title: "MiniYouTube Backend",
+      description:
+        "Developed a RESTful backend system for a Mini YouTube–like video sharing platform to manage users,videos, and authentication",
+      tech: [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "JWT",
+        "bcrypt",
+        "Multer",
+        "Cloudinary",
+      ],
+      github: "https://github.com/lalit999999/miniyoutube_backend",
+      live: "https://github.com/lalit999999/miniyoutube_backend",
     },
   ],
   certifications: [

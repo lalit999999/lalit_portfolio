@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { blogConfigurations } from "../app/data/blog-config";
 
 export type BlogPost = {
@@ -22,13 +22,9 @@ export const useMultiBlogPosts = () => {
     const fetchAllBlogPosts = async () => {
       try {
         setLoading(true);
-        const HASHNODE_TOKEN =
-          import.meta.env.VITE_HASHNODE_TOKEN ||
-          "af7aa855-d320-4333-8589-7b4515ce781b";
-
+        const HASHNODE_TOKEN = import.meta.env.VITE_HASHNODE_TOKEN || "";
         const allPosts: BlogPost[] = [];
 
-        // Loop through each blog configuration
         for (const blogConfig of blogConfigurations) {
           console.log(
             `Fetching posts from: ${blogConfig.name} (${blogConfig.host})`,
@@ -65,27 +61,23 @@ export const useMultiBlogPosts = () => {
           let endCursor: string | null = null;
           let blogPosts: any[] = [];
 
-          // Fetch paginated posts for this blog
           while (hasNextPage) {
-            const postsResponse: Response = await fetch(
-              "https://gql.hashnode.com",
-              {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                  ...(HASHNODE_TOKEN && {
-                    Authorization: `Bearer ${HASHNODE_TOKEN}`,
-                  }),
-                },
-                body: JSON.stringify({
-                  query: postsQuery,
-                  variables: {
-                    host: blogConfig.host,
-                    after: endCursor,
-                  },
+            const postsResponse: Response = await fetch("/api/hashnode", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                ...(HASHNODE_TOKEN && {
+                  Authorization: `Bearer ${HASHNODE_TOKEN}`,
                 }),
               },
-            );
+              body: JSON.stringify({
+                query: postsQuery,
+                variables: {
+                  host: blogConfig.host,
+                  after: endCursor,
+                },
+              }),
+            });
 
             if (!postsResponse.ok) {
               console.warn(
@@ -121,7 +113,6 @@ export const useMultiBlogPosts = () => {
             );
           }
 
-          // Transform and add posts from this blog
           const transformedPosts: BlogPost[] = blogPosts.map((edge: any) => ({
             id: edge.node.id,
             title: edge.node.title,
@@ -141,7 +132,6 @@ export const useMultiBlogPosts = () => {
           allPosts.push(...transformedPosts);
         }
 
-        // Sort all posts by date (newest first)
         allPosts.sort(
           (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
         );

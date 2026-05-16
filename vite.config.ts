@@ -14,6 +14,16 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  server: {
+    proxy: {
+      "/api/hashnode": {
+        target: "https://gql.hashnode.com",
+        changeOrigin: true,
+        secure: true,
+        rewrite: (path) => path.replace(/^\/api\/hashnode/, ""),
+      },
+    },
+  },
   resolve: {
     alias: {
       // Alias @ to the src directory
