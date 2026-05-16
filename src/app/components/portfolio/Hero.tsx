@@ -58,8 +58,8 @@ export function Hero() {
           download
           target="_blank"
         >
-          <Download className="w-4 h-4 group-hover:animate-bounce" />
-          Download Resume
+          
+          View Resume
         </a>
       </motion.div>
 
