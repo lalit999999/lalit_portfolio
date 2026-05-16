@@ -25,7 +25,7 @@ export const portfolioData = {
     image:
       "https://res.cloudinary.com/dsmyka9cr/image/upload/v1778235248/WhatsApp_Image_2026-05-08_at_15.43.16_hkrbuz.jpg",
     resumeLink:
-      "https://res.cloudinary.com/dsmyka9cr/image/upload/v1778943898/NIT_Patna_Resume_Template_v2_1-1_rgveom.pdf",
+      "https://res.cloudinary.com/dsmyka9cr/image/upload/v1778955545/NIT_Patna_Resume_Template_v2_1-1_rgveom.pdf",
   },
   education: [
     {
