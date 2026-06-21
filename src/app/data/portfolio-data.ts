@@ -35,7 +35,7 @@ export const portfolioData = {
     image:
       "https://res.cloudinary.com/dsmyka9cr/image/upload/v1778235248/WhatsApp_Image_2026-05-08_at_15.43.16_hkrbuz.jpg",
     resumeLink:
-      "https://res.cloudinary.com/dsmyka9cr/image/upload/v1778955545/NIT_Patna_Resume_Template_v2_1-1_rgveom.pdf",
+      "https://res.cloudinary.com/dsmyka9cr/image/upload/v1782059466/collageformateresume_vesbd5.pdf",
   },
   education: [
     {
@@ -245,7 +245,7 @@ export const portfolioData = {
     {
       id: 2,
       title: "AWS Cloud Quest: Cloud Practitioner - Training Badge",
-      issuer: "Amazon Web Services Training and Certification",
+      issuer: "AWS",
       date: "April 2026",
       credentialUrl:
         "https://www.credly.com/badges/d30fe051-d896-46e7-bd43-3f0077d0fc43/public_url",
@@ -260,17 +260,24 @@ export const portfolioData = {
       ],
       color: "blue",
     },
-    // {
-    //   id: 3,
-    //   title: "SQL and Databases",
-    //   issuer: "Coursera",
-    //   date: "Mar 2025",
-    //   credentialUrl: "#",
-    //   image:
-    //     "https://res.cloudinary.com/dsmyka9cr/image/upload/v1/certs/sql-cert.jpg",
-    //   skills: ["SQL", "MySQL", "Database Design"],
-    //   color: "violet",
-    // },
+    {
+      id: 3,
+      title: "Full stack generative and Agentic AI with python",
+      issuer: "Udemy",
+      date: "June 2026",
+      credentialUrl:
+        "https://www.udemy.com/certificate/UC-cefd5275-ff28-47de-a824-c380e58e660e/",
+      image:
+        "https://res.cloudinary.com/dsmyka9cr/image/upload/v1782059915/udemycir_yqhshg.jpg",
+      skills: [
+        "Stateful AI system design with LangGraph",
+        "RAG pipeline implementation",
+        "Model Context Protocol (MCP) server development",
+        "Data validation and structuring with Pydantic",
+        "Containerized deployment with Docker",
+      ],
+      color: "purple",
+    },
   ],
   socials: [
     { name: "GitHub", url: "https://github.com/lalit999999", icon: Github },
