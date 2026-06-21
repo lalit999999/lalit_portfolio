@@ -11,8 +11,18 @@ import {
   Cpu,
   FileCode2,
   Hash,
-  Wifi,
-  Container,
+  Sparkles,
+  HardDrive,
+  Network,
+  GitFork,
+  Box,
+  Play,
+  RefreshCw,
+  Globe,
+  Cloud,
+  GitBranch,
+  Component,
+  Radio,
 } from "lucide-react";
 
 export const portfolioData = {
@@ -21,7 +31,7 @@ export const portfolioData = {
     tagline:
       "Full Stack Developer | Node js guy which build scalable solution ",
     description:
-      "Hi! I’m Lalit, a Student in NIT Patna. I have a passion for building web applications and love Reading articles and books. My approach combines technical expertise with creative problem-solving to deliver exceptional results.",
+      "I build full-stack AI applications that integrate large language models into production systems. Specializing in end-to-end development from LLM API integration (OpenAI, Anthropic) through scalable backend architecture and responsive frontends.Technical expertise spans frontend (React, NextJS, TypeScript), backend (Node.js, FastAPI, REST APIs), databases (PostgreSQL, MongoDB), and infrastructure (Docker, CI/CD, GitHub Actions, VPS deployment). Experienced with system design, WebSocket implementation, and real-time data handling using Redis and Socket.IO.Currently pursuing B.Tech in Computer Engineering at National Institute of Technology Patna while contributing to production systems. Certified in AWS Cloud Practitioner and Oracle Cloud Infrastructure AI Foundations. Proficient in Git, Linux, and modern development workflows.Looking to collaborate on AI-powered applications, backend optimization, and full-stack engineering challenges. Open to opportunities in AI engineering, backend development, and system architecture roles.",
     image:
       "https://res.cloudinary.com/dsmyka9cr/image/upload/v1778235248/WhatsApp_Image_2026-05-08_at_15.43.16_hkrbuz.jpg",
     resumeLink:
@@ -44,55 +54,65 @@ export const portfolioData = {
   ],
   skills: [
     {
-      category: "Frontend",
-      items: [
-        { name: "HTML5", icon: Layout },
-        { name: "Tailwind CSS", icon: Layout },
-        { name: "React", icon: Code2 },
-        { name: "NEXTJS", icon: Layout },
-        { name: "Vite", icon: Code2 },
-      ],
-    },
-    {
-      category: "language",
+      category: "Languages",
       items: [
         { name: "C++", icon: Code2 },
-        { name: "Python", icon: Layout },
         { name: "JavaScript", icon: FileCode2 },
-        { name: "C", icon: FileCode2 },
+        { name: "SQL", icon: Database },
       ],
     },
     {
-      category: "Backend & API",
+      category: "Frameworks",
+      items: [
+        { name: "ReactJS", icon: Code2 },
+        { name: "NextJS", icon: Layout },
+        { name: "Express JS", icon: Server },
+        { name: "FastAPI", icon: Terminal },
+      ],
+    },
+    {
+      category: "Backend & Infrastructure",
       items: [
         { name: "Node.js", icon: Server },
-        { name: "Express", icon: Server },
-        { name: "Postman", icon: Server },
-        { name: "REST API", icon: Server },
-        // Postman ,REST api
-        // { name: "Python", icon: Terminal },
+        { name: "REST API", icon: Cpu },
+        { name: "LLM API Integration", icon: Sparkles },
+        { name: "WebSockets", icon: Network },
+        { name: "System Design", icon: GitFork },
       ],
     },
     {
       category: "Database",
       items: [
         { name: "MongoDB", icon: Database },
-        { name: "MySQL", icon: Database },
+        { name: "PostgreSQL", icon: Database },
+        { name: "Redis", icon: HardDrive },
       ],
     },
     {
+      category: "DevOps & Deployment",
+      items: [
+        { name: "Docker", icon: Box },
+        { name: "GitHub Actions", icon: Play },
+        { name: "CI/CD", icon: RefreshCw },
+        { name: "Caddy", icon: Globe },
+        { name: "VPS Deployment", icon: Cloud },
+      ],
+    },
+    //Box, Play, RefreshCw ,Globe , Cloud
+    {
       category: "Tools",
       items: [
-        { name: "Git/Github", icon: Terminal },
-        { name: "VScode", icon: Terminal },
-        { name: "Docker", icon: Container },
-        // { name: "Docker", icon: Cpu },
+        { name: "Git", icon: GitBranch },
+        { name: "GitHub", icon: Github },
+        { name: "Linux", icon: Terminal },
+        { name: "Postman", icon: Radio },
+        { name: "Blender", icon: Component },
       ],
     },
   ],
   learning: {
-    technologies: ["Next.js 14", "System Design"],
-    note: "Currently deep diving into distributed systems and high-performance computing.",
+    technologies: ["AI integration", "Next.js 14", "System Design"],
+    note: "Currently deep diving into AI integration and system design things.",
   },
   projects: [
     {
