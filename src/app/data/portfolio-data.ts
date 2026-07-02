@@ -116,7 +116,7 @@ export const portfolioData = {
   },
   projects: [
     {
-      id: 1,
+      id: 0,
       title: "PollMan – Full-Stack Real-Time Poll & Survey Platform",
       description:
         "A modern full-stack real-time poll and survey platform with live analytics, public sharing, poll publishing, and interactive dashboards built using React, Node.js, MongoDB, Socket.IO, and Recharts",
@@ -133,6 +133,25 @@ export const portfolioData = {
       ],
       github: "https://github.com/lalit999999/PollMan",
       live: "https://pollman.onrender.com/",
+    },
+    {
+      id: 1,
+      title: "Super Alein - AI-powered Gmail + Google Calendar command center",
+      description:
+        "SuperAlien is an AI-powered productivity platform that augments Gmail and Google Calendar with intelligent features. It provides AI email summarization, smart management, advanced search, and agent-driven automation—without cloning Gmail. Built for professionals who want to work smarter, not harder.",
+
+      tech: [
+        "Next js",
+        "Typescript",
+        "Clerk Auth",
+        "Corsair dev",
+        "PostgreSQL",
+
+        "OpenAI",
+        "Gmail and Google Calendar Connectors",
+      ],
+      github: "https://github.com/lalit999999/super-alien",
+      live: "https://superalein.lalitgurjar.in/",
     },
 
     {
